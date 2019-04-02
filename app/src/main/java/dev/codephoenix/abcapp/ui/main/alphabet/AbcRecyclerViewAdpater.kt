@@ -30,13 +30,14 @@ class AbcRecyclerViewAdpater(val letters : ArrayList<LetterModel>, val context: 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val assignedLetter = LetterModel(letterName = letters[position].letterName)
+        //pass letter via bundle
+
         holder.letterText?.text = assignedLetter.letterName
         holder.letterText?.setOnClickListener {
             val mainActivity = activity
-            val detailFragment = AbcDetailFragment()
             mainActivity.supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, detailFragment)
+                .replace(R.id.container, AbcDetailFragment.newInstance(assignedLetter.letterName))
                 .addToBackStack(null)
                 .commit()
         }
