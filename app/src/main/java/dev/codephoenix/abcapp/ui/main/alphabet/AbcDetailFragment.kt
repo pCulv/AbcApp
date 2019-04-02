@@ -2,16 +2,16 @@ package dev.codephoenix.abcapp.ui.main.alphabet
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import dev.codephoenix.abcapp.R
-import kotlinx.android.synthetic.main.letter_detail_frag.*
-import timber.log.Timber
 
 class AbcDetailFragment : Fragment() {
 
-
+    private lateinit var viewPager: ViewPager
+    
     companion object {
         fun newInstance(assignedLetter: String): AbcDetailFragment{
             val fragment = AbcDetailFragment()
@@ -35,10 +35,10 @@ class AbcDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val letterKey = "assignedLetter"
-
-        val assignedLetter: String? = arguments?.getString(letterKey)
-        Timber.i("Letter is : %s", assignedLetter)
-        large_letter_tv?.text = assignedLetter
+//        val letterKey = "assignedLetter"
+//
+//        val assignedLetter: String? = arguments?.getString(letterKey)
+//        Timber.i("Letter is : %s", assignedLetter)
+//        letter_detail_viewpager?.text = assignedLetter
     }
 }
