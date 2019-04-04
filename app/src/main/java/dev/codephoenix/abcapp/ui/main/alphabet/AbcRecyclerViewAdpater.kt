@@ -8,10 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
-import dev.codephoenix.abcapp.data.LetterModel
 import kotlinx.android.synthetic.main.abc_list_item.view.*
 
-class AbcRecyclerViewAdpater(val letters : ArrayList<LetterModel>, val context: Context?,
+class AbcRecyclerViewAdpater(val letters : ArrayList<String>, val context: Context?,
                              private val activity: MainActivity
 ) :
     RecyclerView.Adapter<AbcRecyclerViewAdpater.ViewHolder>() {
@@ -29,15 +28,15 @@ class AbcRecyclerViewAdpater(val letters : ArrayList<LetterModel>, val context: 
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val assignedLetter = LetterModel(letterName = letters[position].letterName)
+        val assignedLetter = letters[position]
         //pass letter via bundle
 
-        holder.letterText?.text = assignedLetter.letterName
+        holder.letterText?.text = assignedLetter
         holder.letterText?.setOnClickListener {
             val mainActivity = activity
             mainActivity.supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, AbcDetailFragment.newInstance(assignedLetter.letterName))
+                .replace(R.id.container, AbcDetailFragment.newInstance(assignedLetter))
                 .addToBackStack(null)
                 .commit()
         }
