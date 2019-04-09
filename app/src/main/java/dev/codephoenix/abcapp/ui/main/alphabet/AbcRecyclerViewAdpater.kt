@@ -36,7 +36,7 @@ class AbcRecyclerViewAdpater(val letters : ArrayList<String>, val context: Conte
             val mainActivity = activity
             mainActivity.supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, AbcDetailFragment.newInstance(assignedLetter))
+                .replace(R.id.container, AbcDetailFragment.newInstance(position))
                 .addToBackStack(null)
                 .commit()
         }
