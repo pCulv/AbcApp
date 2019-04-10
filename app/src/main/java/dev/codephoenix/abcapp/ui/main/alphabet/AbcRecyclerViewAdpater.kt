@@ -10,8 +10,10 @@ import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
 import kotlinx.android.synthetic.main.abc_list_item.view.*
 
-class AbcRecyclerViewAdpater(val letters : ArrayList<String>, val context: Context?,
-                             private val activity: MainActivity
+class AbcRecyclerViewAdpater(
+    val letters : ArrayList<String>,
+    val context: Context?,
+    private val activity: MainActivity
 ) :
     RecyclerView.Adapter<AbcRecyclerViewAdpater.ViewHolder>() {
 

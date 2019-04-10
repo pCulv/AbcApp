@@ -37,7 +37,7 @@ class AbcDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val abcList: ArrayList<String> = ArrayList()
-        AbcFragment.newInstance().addAlphabet(abcList)
+        AbcFragment().addAlphabet(abcList)
         val pagerAdapter = AlphabetPagerAdapter(activity!!.supportFragmentManager, abcList)
         val viewPager = letter_detail_viewpager
         viewPager.adapter = pagerAdapter

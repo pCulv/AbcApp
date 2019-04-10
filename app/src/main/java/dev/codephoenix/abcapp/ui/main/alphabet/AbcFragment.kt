@@ -8,17 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
-import dev.codephoenix.abcapp.viewmodel.AlphabetViewModel
 import kotlinx.android.synthetic.main.abc_fragment.*
 
 class AbcFragment : Fragment() {
 
     val letters: ArrayList<String> = ArrayList()
-    private lateinit var alphabetViewModel: AlphabetViewModel
-
-    companion object {
-        fun newInstance() = AbcFragment()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

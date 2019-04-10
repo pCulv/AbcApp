@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
 import dev.codephoenix.abcapp.ui.main.alphabet.AbcFragment
-import timber.log.Timber
+import dev.codephoenix.abcapp.ui.main.numbers.NumberFragment
+import kotlinx.android.synthetic.main.main_fragment.*
 
 class  MainFragment : Fragment() {
 
@@ -32,10 +33,18 @@ class  MainFragment : Fragment() {
             val mainActivity : MainActivity = activity as MainActivity
             mainActivity.supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, AbcFragment.newInstance())
+                .replace(R.id.container, AbcFragment())
                 .addToBackStack(null)
                 .commit()
-            Timber.i("Timber works")
+        }
+
+        number_card!!.setOnClickListener {
+            val mainActivity: MainActivity = activity as MainActivity
+            mainActivity.supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container, NumberFragment())
+                .addToBackStack(null)
+                .commit()
         }
     }
 
