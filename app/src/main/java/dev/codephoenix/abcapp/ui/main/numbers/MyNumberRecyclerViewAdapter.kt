@@ -26,14 +26,14 @@ class MyNumberRecyclerViewAdapter(
         //pass letter via bundle
 
         holder.numberText.text = assignedNumber.toString()
-//        holder.numberText.setOnClickListener {
-//            val mainActivity = activity
-//            mainActivity.supportFragmentManager
-//                .beginTransaction()
-//                .replace(R.id.container, NumberDetailFragment())
-//                .addToBackStack(null)
-//                .commit()
-//        }
+        holder.numberText.setOnClickListener {
+            val mainActivity = activity
+            mainActivity.supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container, NumberDetailFragment())
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
     override fun getItemCount(): Int = numbers.size
