@@ -10,10 +10,24 @@ import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
 import kotlinx.android.synthetic.main.abc_fragment.*
 
-class AbcFragment : Fragment() {
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
+class LearningListFragment : Fragment() {
 
-    val letters: ArrayList<String> = ArrayList()
+    var learningElements: ArrayList<String> = ArrayList()
 
+    companion object {
+        val CURRENT_LIST = "currentList"
+
+        fun newInstance(currentList: ArrayList<String>): LearningListFragment {
+            val fragment = LearningListFragment()
+            val args = Bundle()
+            args.putStringArrayList(CURRENT_LIST, currentList)
+            fragment.arguments = args
+            return fragment
+        }
+
+        //Todo: Create custom function adding list of images for shapes a
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -21,7 +35,7 @@ class AbcFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.abc_fragment, container, false)
 
-        addAlphabet(letters)
+        learningElements = arguments!!.getStringArrayList(CURRENT_LIST)
         return view
     }
 
@@ -29,22 +43,12 @@ class AbcFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         abc_recyclerview?.layoutManager = GridLayoutManager(context, 4)
-        abc_recyclerview?.adapter = AbcRecyclerViewAdpater(
-            letters, context,
+        abc_recyclerview?.adapter = LearningElementsRecyclerViewAdpater(
+            learningElements, context,
             activity = activity as MainActivity
         )
-
-
     }
 
     // Todo: add Alphabet list to database
-    fun addAlphabet(abcList: ArrayList<String>) {
 
-        var letter = 'A'
-
-        while (letter <= 'Z') {
-            abcList.add(letter.toString())
-            ++letter
-        }
-    }
 }

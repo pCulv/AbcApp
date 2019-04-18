@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.fragment_number_list.*
 
 class NumberFragment : Fragment() {
 
-    val numbers: ArrayList<Int> = ArrayList()
+    lateinit var numbers: MutableList<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,12 +40,12 @@ class NumberFragment : Fragment() {
             numbers, context, activity as MainActivity)
     }
 
-    fun addNumbers(numbers: ArrayList<Int>) {
+    fun addNumbers(numbers: MutableList<String>) {
 
         var number = 1
 
         while (number <= 100) {
-            numbers.add(number)
+            numbers.add(number.toString())
             ++number
         }
     }

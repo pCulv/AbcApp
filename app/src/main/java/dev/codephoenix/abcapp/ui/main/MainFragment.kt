@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
-import dev.codephoenix.abcapp.ui.main.alphabet.AbcFragment
-import dev.codephoenix.abcapp.ui.main.numbers.NumberFragment
+import dev.codephoenix.abcapp.data.LearningElements
+import dev.codephoenix.abcapp.ui.main.alphabet.LearningListFragment
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class  MainFragment : Fragment() {
@@ -28,26 +28,35 @@ class  MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val abcCardView = view.findViewById<View>(R.id.abc_card)
-        abcCardView.setOnClickListener {
+        //Abc Card Clicked
+        abc_card!!.setOnClickListener {
             val mainActivity : MainActivity = activity as MainActivity
+            val abcList: ArrayList<String> = ArrayList()
+            //add alphabet to abc list
+            LearningElements().addAlphabet(abcList)
+
             mainActivity.supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, AbcFragment())
+                .replace(R.id.container, LearningListFragment.newInstance(abcList))
                 .addToBackStack(null)
                 .commit()
         }
-
+        //Number Card Clicked
         number_card!!.setOnClickListener {
             val mainActivity: MainActivity = activity as MainActivity
+            val numberList: ArrayList<String> = ArrayList()
+            //add numbers numberList
+            LearningElements().addNumbers(numberList)
+
             mainActivity.supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, NumberFragment())
+                .replace(R.id.container, LearningListFragment.newInstance(numberList))
                 .addToBackStack(null)
                 .commit()
         }
     }
 
+    //Todo: Add Shapes & Colors
     companion object {
         fun newInstance() = MainFragment()
     }

@@ -10,17 +10,19 @@ import android.view.ViewGroup
 import dev.codephoenix.abcapp.R
 import kotlinx.android.synthetic.main.letter_detail_frag.*
 
-class AbcDetailFragment : Fragment() {
+class LearningElementDetailFragment : Fragment() {
 
     companion object {
-        val ASSIGNED_LETTER = "assignedLetter"
 
-        fun newInstance(currentPosition: Int): AbcDetailFragment {
-            val fragment = AbcDetailFragment()
+        val CURRENT_LIST = "currentList"
+        val CURRENT_ITEM = "itemPosition"
+
+        fun newInstance(currentList: ArrayList<String>, currentItem: Int): LearningElementDetailFragment {
+            val fragment = LearningElementDetailFragment()
             val args = Bundle()
-            args.putInt(ASSIGNED_LETTER, currentPosition)
+            args.putStringArrayList(CURRENT_LIST, currentList)
+            args.putInt(CURRENT_ITEM, currentItem)
             fragment.arguments = args
-
             return fragment
         }
     }
@@ -36,24 +38,23 @@ class AbcDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val abcList: ArrayList<String> = ArrayList()
-        AbcFragment().addAlphabet(abcList)
-        val pagerAdapter = AlphabetPagerAdapter(activity!!.supportFragmentManager, abcList)
+        val elementList = arguments!!.getStringArrayList(CURRENT_LIST)
+        val pagerAdapter = AlphabetPagerAdapter(activity!!.supportFragmentManager, elementList)
         val viewPager = letter_detail_viewpager
         viewPager.adapter = pagerAdapter
-        viewPager.currentItem = arguments!!.getInt(ASSIGNED_LETTER)
+        viewPager.currentItem = arguments!!.getInt(CURRENT_ITEM)
 
     }
 
-    inner class AlphabetPagerAdapter(fragmentManager: FragmentManager, private val letters: ArrayList<String>) :
+    inner class AlphabetPagerAdapter(fragmentManager: FragmentManager, private val learningElements: ArrayList<String>) :
         FragmentStatePagerAdapter(fragmentManager) {
 
         override fun getItem(position: Int): Fragment {
-            return LetterPageFragment.newInstance(letters[position])
+            return LearningElementViewPagerPageFragment.newInstance(learningElements[position])
         }
 
         override fun getCount(): Int {
-            return letters.size
+            return learningElements.size
         }
 
     }

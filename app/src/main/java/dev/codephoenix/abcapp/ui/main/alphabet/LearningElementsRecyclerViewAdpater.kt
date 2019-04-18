@@ -5,17 +5,17 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.TextView
 import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
 import kotlinx.android.synthetic.main.abc_list_item.view.*
 
-class AbcRecyclerViewAdpater(
+class LearningElementsRecyclerViewAdpater(
     val letters : ArrayList<String>,
     val context: Context?,
     private val activity: MainActivity
 ) :
-    RecyclerView.Adapter<AbcRecyclerViewAdpater.ViewHolder>() {
+    RecyclerView.Adapter<LearningElementsRecyclerViewAdpater.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -38,14 +38,14 @@ class AbcRecyclerViewAdpater(
             val mainActivity = activity
             mainActivity.supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, AbcDetailFragment.newInstance(position))
+                .replace(R.id.container, LearningElementDetailFragment.newInstance(letters, position))
                 .addToBackStack(null)
                 .commit()
         }
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val letterText: Button? = view.letter_btn
+        val letterText: TextView? = view.letter_btn
 
 
     }

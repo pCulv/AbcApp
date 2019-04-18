@@ -4,7 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context=".ui.main.alphabet.AbcFragment">
+              tools:context=".ui.main.alphabet.LearningListFragment">
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/abc_recyclerview"
@@ -12,7 +12,7 @@
             android:layout_height="match_parent"
             android:clickable="true"
             android:focusable="true"
-            android:layout_margin="16dp">
+    >
 
     </android.support.v7.widget.RecyclerView>
 

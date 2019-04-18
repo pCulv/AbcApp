@@ -11,7 +11,7 @@ import dev.codephoenix.abcapp.R
 import kotlinx.android.synthetic.main.fragment_number.view.*
 
 class MyNumberRecyclerViewAdapter(
-    val numbers : ArrayList<Int>, val context: Context?,
+    val numbers : MutableList<String>, val context: Context?,
     private val activity: MainActivity
 ) : RecyclerView.Adapter<MyNumberRecyclerViewAdapter.ViewHolder>() {
 
@@ -25,7 +25,7 @@ class MyNumberRecyclerViewAdapter(
         val assignedNumber = numbers[position]
         //pass letter via bundle
 
-        holder.numberText.text = assignedNumber.toString()
+        holder.numberText.text = assignedNumber
         holder.numberText.setOnClickListener {
             val mainActivity = activity
             mainActivity.supportFragmentManager
