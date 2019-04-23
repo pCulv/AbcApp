@@ -1,4 +1,4 @@
-package dev.codephoenix.abcapp.ui.main.alphabet
+package dev.codephoenix.abcapp.ui.main.learningElements
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView

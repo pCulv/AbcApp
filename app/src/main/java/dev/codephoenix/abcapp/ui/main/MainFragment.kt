@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
 import dev.codephoenix.abcapp.data.LearningElements
-import dev.codephoenix.abcapp.ui.main.alphabet.LearningListFragment
+import dev.codephoenix.abcapp.ui.main.learningElements.LearningListFragment
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class  MainFragment : Fragment() {
@@ -51,6 +51,25 @@ class  MainFragment : Fragment() {
             mainActivity.supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.container, LearningListFragment.newInstance(numberList))
+                .addToBackStack(null)
+                .commit()
+        }
+
+        //Shapes Card Clicked
+        shapes_card!!.setOnClickListener {
+
+        }
+
+        //Colors Card
+        colors_card!!.setOnClickListener {
+            val mainActivity: MainActivity = activity as MainActivity
+            val colorsList: ArrayList<String> = ArrayList()
+            //add numbers numberList
+            LearningElements().addColors(colorsList, true)
+
+            mainActivity.supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.container, LearningListFragment.newInstance(colorsList))
                 .addToBackStack(null)
                 .commit()
         }

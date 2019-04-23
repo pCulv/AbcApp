@@ -1,6 +1,7 @@
-package dev.codephoenix.abcapp.ui.main.alphabet
+package dev.codephoenix.abcapp.ui.main.learningElements
 
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -36,6 +37,9 @@ class LearningElementViewPagerPageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val ASSIGNED_ELEMENT = "assignedLetter"
         letter_page_tv!!.text = arguments?.getString(ASSIGNED_ELEMENT)
+
+        //Todo: Add boolean if statement for the object being a color card
+        learningElementLayout!!.setBackgroundColor(Color.BLUE)
     }
 }
 

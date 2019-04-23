@@ -1,4 +1,4 @@
-package dev.codephoenix.abcapp.ui.main.alphabet
+package dev.codephoenix.abcapp.ui.main.learningElements
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentStatePagerAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import dev.codephoenix.abcapp.R
 import kotlinx.android.synthetic.main.letter_detail_frag.*
 
@@ -43,6 +44,8 @@ class LearningElementDetailFragment : Fragment() {
         val viewPager = letter_detail_viewpager
         viewPager.adapter = pagerAdapter
         viewPager.currentItem = arguments!!.getInt(CURRENT_ITEM)
+
+        Toast.makeText(context, "Hi, I'm a toast", Toast.LENGTH_SHORT).show()
 
     }
 
