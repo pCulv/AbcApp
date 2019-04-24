@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
+import dev.codephoenix.abcapp.data.ColorObj
 import dev.codephoenix.abcapp.data.LearningElements
 import dev.codephoenix.abcapp.ui.main.learningElements.LearningListFragment
 import kotlinx.android.synthetic.main.main_fragment.*
@@ -63,13 +64,13 @@ class  MainFragment : Fragment() {
         //Colors Card
         colors_card!!.setOnClickListener {
             val mainActivity: MainActivity = activity as MainActivity
-            val colorsList: ArrayList<String> = ArrayList()
+            val colorsList: ArrayList<ColorObj> = ArrayList()
             //add numbers numberList
-            LearningElements().addColors(colorsList, true)
+            LearningElements().addColors(colorsList)
 
             mainActivity.supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, LearningListFragment.newInstance(colorsList))
+                .replace(R.id.container, LearningListFragment.newColorInstance(colorsList))
                 .addToBackStack(null)
                 .commit()
         }

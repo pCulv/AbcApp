@@ -1,7 +1,6 @@
 package dev.codephoenix.abcapp.ui.main.learningElements
 
 
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -23,6 +22,15 @@ class LearningElementViewPagerPageFragment : Fragment() {
 
             return fragment
         }
+        fun newColorInstance(currentColor: Int): LearningElementViewPagerPageFragment {
+            val CURRENT_COLOR = "colorColor"
+            val fragment = LearningElementViewPagerPageFragment()
+            val args = Bundle()
+            args.putInt(CURRENT_COLOR, currentColor)
+            fragment.arguments = args
+
+            return fragment
+        }
     }
 
     override fun onCreateView(
@@ -36,11 +44,18 @@ class LearningElementViewPagerPageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val ASSIGNED_ELEMENT = "assignedLetter"
-        letter_page_tv!!.text = arguments?.getString(ASSIGNED_ELEMENT)
+        val CURRENT_COLOR = "colorColor"
+        val currentColor: Int = arguments!!.getInt(CURRENT_COLOR)
+        val currentElement: String? = arguments!!.getString(ASSIGNED_ELEMENT)
 
-        //Todo: Add boolean if statement for the object being a color card
-        learningElementLayout!!.setBackgroundColor(Color.BLUE)
+        learning_element_tv!!.text = currentElement
+
+        //sets background for the current color
+        learningElementLayout!!.setBackgroundColor(currentColor)
+
     }
+
+
 }
 
 

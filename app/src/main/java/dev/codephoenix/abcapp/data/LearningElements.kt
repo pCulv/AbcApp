@@ -1,6 +1,6 @@
 package dev.codephoenix.abcapp.data
 
-import dev.codephoenix.abcapp.R
+import android.graphics.Color
 
 class LearningElements {
 
@@ -24,17 +24,17 @@ class LearningElements {
         }
     }
 
-    fun addColors(colors: ArrayList<String>, isColor: Boolean) {
+    fun addColors(colors: ArrayList<ColorObj>) {
 
-//        val red =
-        val blue = R.color.blue
-        val green = R.color.green
-        val yellow = R.color.yellow
+        val red = ColorObj("red", Color.RED)
+        val blue = ColorObj("blue", Color.BLUE)
+        val green = ColorObj("green", Color.GREEN)
+        val yellow = ColorObj("yellow", Color.YELLOW)
 
-//        colors.add(red.toString())
-        colors.add(blue.toString())
-        colors.add(green.toString())
-        colors.add(yellow.toString())
+        colors.add(red)
+        colors.add(blue)
+        colors.add(green)
+        colors.add(yellow)
 
     }
 }
