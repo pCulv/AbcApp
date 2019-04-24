@@ -1,6 +1,8 @@
 package dev.codephoenix.abcapp.data
 
-import android.graphics.Color
+import android.content.Context
+import android.support.v4.content.ContextCompat
+import dev.codephoenix.abcapp.R
 
 class LearningElements {
 
@@ -24,17 +26,20 @@ class LearningElements {
         }
     }
 
-    fun addColors(colors: ArrayList<ColorObj>) {
+    fun addColors(colors: ArrayList<ColorObj>, context: Context?) {
 
-        val red = ColorObj("red", Color.RED)
-        val blue = ColorObj("blue", Color.BLUE)
-        val green = ColorObj("green", Color.GREEN)
-        val yellow = ColorObj("yellow", Color.YELLOW)
+        val red = ColorObj("Red", ContextCompat.getColor(context!!, R.color.red))
+        val blue = ColorObj("Blue", ContextCompat.getColor(context!!, R.color.blue))
+        val green = ColorObj("Green", ContextCompat.getColor(context!!, R.color.green))
+        val yellow = ColorObj("Yellow", ContextCompat.getColor(context!!, R.color.yellow))
+        val orange = ColorObj("Orange", ContextCompat.getColor(context!!, R.color.orange))
+        //Todo: Add additional colors
 
         colors.add(red)
         colors.add(blue)
         colors.add(green)
         colors.add(yellow)
+        colors.add(orange)
 
     }
 }

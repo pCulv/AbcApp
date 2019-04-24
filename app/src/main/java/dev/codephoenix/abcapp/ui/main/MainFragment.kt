@@ -66,7 +66,7 @@ class  MainFragment : Fragment() {
             val mainActivity: MainActivity = activity as MainActivity
             val colorsList: ArrayList<ColorObj> = ArrayList()
             //add numbers numberList
-            LearningElements().addColors(colorsList)
+            LearningElements().addColors(colorsList, context)
 
             mainActivity.supportFragmentManager
                 .beginTransaction()
