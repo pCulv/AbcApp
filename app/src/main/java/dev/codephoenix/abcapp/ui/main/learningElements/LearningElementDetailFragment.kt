@@ -1,12 +1,13 @@
 package dev.codephoenix.abcapp.ui.main.learningElements
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentStatePagerAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.viewpager.widget.ViewPager
 import dev.codephoenix.abcapp.R
 import dev.codephoenix.abcapp.data.ColorObj
 import kotlinx.android.synthetic.main.letter_detail_frag.*
@@ -54,7 +55,7 @@ class LearningElementDetailFragment : Fragment() {
         val colorList: ArrayList<ColorObj>? = arguments?.getParcelableArrayList(COLOR_LIST)
         val pagerAdapter = AlphabetPagerAdapter(activity!!.supportFragmentManager, elementList)
         val colorPagerAdapter = ColorsPagerAdapter(activity!!.supportFragmentManager, colorList)
-        val viewPager = letter_detail_viewpager
+        val viewPager: ViewPager = letter_detail_viewpager as ViewPager
         // Determines if a color or string learning element has been passed
         if (elementList != null) {
             viewPager.adapter = pagerAdapter

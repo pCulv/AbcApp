@@ -1,11 +1,11 @@
 package dev.codephoenix.abcapp.ui.main.learningElements
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
 import dev.codephoenix.abcapp.data.ColorObj

@@ -1,11 +1,11 @@
 package dev.codephoenix.abcapp.ui.main.learningElements
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
 import dev.codephoenix.abcapp.data.ColorObj

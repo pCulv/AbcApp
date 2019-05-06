@@ -2,10 +2,10 @@ package dev.codephoenix.abcapp.ui.main.numbers
 
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
 import kotlinx.android.synthetic.main.fragment_number.view.*

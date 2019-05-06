@@ -1,10 +1,10 @@
 package dev.codephoenix.abcapp.ui.main
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
 import dev.codephoenix.abcapp.data.ColorObj
