@@ -17,6 +17,7 @@ class LearningElementsRecyclerViewAdpater(
     val letters : ArrayList<String>?
 ) : RecyclerView.Adapter<LearningElementsRecyclerViewAdpater.ViewHolder>() {
     var mColors: ArrayList<ColorObj>? = ArrayList()
+    //Secondary Constructor
     constructor(context: Context?,
                 activity: MainActivity,
                 letters: ArrayList<String>?,

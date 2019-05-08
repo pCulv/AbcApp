@@ -10,8 +10,7 @@ data class ColorObj(
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readInt()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(colorName)

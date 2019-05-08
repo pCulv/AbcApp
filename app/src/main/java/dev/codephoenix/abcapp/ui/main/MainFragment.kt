@@ -11,15 +11,17 @@ import dev.codephoenix.abcapp.data.ColorObj
 import dev.codephoenix.abcapp.data.LearningElements
 import dev.codephoenix.abcapp.ui.main.learningElements.LearningListFragment
 import kotlinx.android.synthetic.main.main_fragment.*
+import org.koin.android.ext.android.inject
 
 class  MainFragment : Fragment() {
+
+    private val learningElements: LearningElements by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
-//        val mainActivity : MainActivity = activity as MainActivity
-//        //removes up navigation arrow
-//        mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -34,8 +36,8 @@ class  MainFragment : Fragment() {
             val mainActivity : MainActivity = activity as MainActivity
             val abcList: ArrayList<String> = ArrayList()
             //add alphabet to abc list
-            LearningElements().addAlphabet(abcList)
-
+            learningElements.addAlphabet(abcList)
+            //display abc list
             mainActivity.supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.container, LearningListFragment.newInstance(abcList))
@@ -47,8 +49,8 @@ class  MainFragment : Fragment() {
             val mainActivity: MainActivity = activity as MainActivity
             val numberList: ArrayList<String> = ArrayList()
             //add numbers numberList
-            LearningElements().addNumbers(numberList)
-
+            learningElements.addNumbers(numberList)
+            //display number list
             mainActivity.supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.container, LearningListFragment.newInstance(numberList))
@@ -66,8 +68,8 @@ class  MainFragment : Fragment() {
             val mainActivity: MainActivity = activity as MainActivity
             val colorsList: ArrayList<ColorObj> = ArrayList()
             //add numbers numberList
-            LearningElements().addColors(colorsList, context)
-
+            learningElements.addColors(colorsList, context!!)
+            //display color list
             mainActivity.supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.container, LearningListFragment.newColorInstance(colorsList))
