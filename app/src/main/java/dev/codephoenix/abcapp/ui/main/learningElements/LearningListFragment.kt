@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import dev.codephoenix.abcapp.MainActivity
 import dev.codephoenix.abcapp.R
 import dev.codephoenix.abcapp.data.ColorObj
@@ -58,9 +59,11 @@ class LearningListFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        abc_recyclerview?.layoutManager = GridLayoutManager(context, 4)
+        abc_recyclerview?.layoutManager = GridLayoutManager(context, 3)
         if (learningElements == null) {
             //set recyclerview for colors
+            abc_recyclerview?.layoutManager = LinearLayoutManager(context)
+
             abc_recyclerview?.adapter = LearningElementsRecyclerViewAdpater(context,
                 activity as MainActivity, learningElements, colorElements)
         } else {

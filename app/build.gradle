@@ -49,6 +49,12 @@ dependencies {
 
     //Koin DI
     implementation 'org.koin:koin-android:2.0.0-GA'
+
+    testImplementation "org.koin:koin-test:2.0.0-GA"
+    androidTestImplementation "org.koin:koin-test:2.0.0-GA"
     //Timber Logging
     implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //Mockito Testing
+    testImplementation "org.mockito:mockito-core:2.27.0"
 }

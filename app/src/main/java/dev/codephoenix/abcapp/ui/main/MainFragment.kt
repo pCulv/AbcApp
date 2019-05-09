@@ -21,7 +21,6 @@ class  MainFragment : Fragment() {
         super.onCreate(savedInstanceState)
         retainInstance = true
 
-
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
