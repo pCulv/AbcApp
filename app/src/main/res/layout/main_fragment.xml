@@ -15,17 +15,18 @@
             android:clickable="true"
             android:focusable="true"
             android:layout_margin="16dp">
-
+    
         <TextView
-                android:id="@+id/a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:text="A B C"
-                android:textSize="100sp"
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
-                android:layout_below="@+id/abc_card" android:textAlignment="center"/>
+            android:id="@+id/a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/abc_card"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/schoolbell"
+            android:text="A B C"
+            android:textAlignment="center"
+            android:textSize="100sp"
+            android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>
 
