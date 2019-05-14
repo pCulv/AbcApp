@@ -25,7 +25,6 @@ class LearningElementsTest : KoinTest {
     }
     @Test
     fun testLearningElementAdded() {
-
         learningElements.addAlphabet(abcList)
 
         verify(learningElements).addAlphabet(abcList)
