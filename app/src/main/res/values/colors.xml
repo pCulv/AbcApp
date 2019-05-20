@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#F44336</color>
+    <color name="colorPrimary">#049f42</color>
+    <color name="colorPrimaryDark">#006f15</color>
+    <color name="colorAccent">#f8e71c</color>
 
-    <color name="red">#FFF44336</color>
-    <color name="blue">#2196F3</color>
-    <color name="green">#8BC34A</color>
-    <color name="yellow">#FFEB3B</color>
-    <color name="orange">#FF9800</color>
-
+    <color name="white">#ffff</color>
+    <color name="light_green">#ddeddf</color>
+    <color name="sepia">#8b572a</color>
+    <color name="scarlet">#d0021b</color>
+    <color name="squash">#f5a623</color>
+    <color name="sun_yellow">#f8e71c</color>
+    <color name="apple_green">#7ed321</color>
+    <color name="dark_sky_blue">#4a90e2</color>
+    <color name="vivid_purple">#9013fe</color>
+    <color name="british_racing_green">#006f15</color>
+    <color name="emerald">#54d16f</color>
 </resources>

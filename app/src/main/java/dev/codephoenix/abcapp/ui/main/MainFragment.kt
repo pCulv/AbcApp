@@ -1,17 +1,19 @@
 package dev.codephoenix.abcapp.ui.main
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import dev.codephoenix.abcapp.MainActivity
-import dev.codephoenix.abcapp.R
 import dev.codephoenix.abcapp.data.ColorObj
 import dev.codephoenix.abcapp.data.LearningElements
 import dev.codephoenix.abcapp.ui.main.learningElements.LearningListFragment
 import kotlinx.android.synthetic.main.main_fragment.*
 import org.koin.android.ext.android.inject
+
 
 class  MainFragment : Fragment() {
 
@@ -25,7 +27,7 @@ class  MainFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? =
-        inflater.inflate(R.layout.main_fragment, container, false)
+        inflater.inflate(dev.codephoenix.abcapp.R.layout.main_fragment, container, false)
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -39,7 +41,7 @@ class  MainFragment : Fragment() {
             //display abc list
             mainActivity.supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, LearningListFragment.newInstance(abcList))
+                .replace(dev.codephoenix.abcapp.R.id.container, LearningListFragment.newInstance(abcList))
                 .addToBackStack(null)
                 .commit()
         }
@@ -52,17 +54,23 @@ class  MainFragment : Fragment() {
             //display number list
             mainActivity.supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, LearningListFragment.newInstance(numberList))
+                .replace(dev.codephoenix.abcapp.R.id.container, LearningListFragment.newInstance(numberList))
                 .addToBackStack(null)
                 .commit()
         }
 
         //Shapes Card Clicked
         shapes_card!!.setOnClickListener {
-
+            Toast.makeText(context, "Shapes not implemented yet", Toast.LENGTH_SHORT).show()
         }
 
         //Colors Card
+
+        //Todo: Change text color to gradient
+        colorsCardText.text = "Colors"
+        colorsCardText.setTextColor(Color.WHITE)
+
+
         colors_card!!.setOnClickListener {
             val mainActivity: MainActivity = activity as MainActivity
             val colorsList: ArrayList<ColorObj> = ArrayList()
@@ -71,7 +79,7 @@ class  MainFragment : Fragment() {
             //display color list
             mainActivity.supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.container, LearningListFragment.newColorInstance(colorsList))
+                .replace(dev.codephoenix.abcapp.R.id.container, LearningListFragment.newColorInstance(colorsList))
                 .addToBackStack(null)
                 .commit()
         }

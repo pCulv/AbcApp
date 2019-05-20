@@ -29,11 +29,11 @@ class LearningElements: LearningElementsRepository {
 
     override fun addColors(colors: ArrayList<ColorObj>, context: Context) {
 
-        val red = ColorObj("Red", ContextCompat.getColor(context, R.color.red))
-        val blue = ColorObj("Blue", ContextCompat.getColor(context, R.color.blue))
-        val green = ColorObj("Green", ContextCompat.getColor(context, R.color.green))
-        val yellow = ColorObj("Yellow", ContextCompat.getColor(context, R.color.yellow))
-        val orange = ColorObj("Orange", ContextCompat.getColor(context, R.color.orange))
+        val red = ColorObj("Red", ContextCompat.getColor(context, R.color.scarlet))
+        val blue = ColorObj("Blue", ContextCompat.getColor(context, R.color.dark_sky_blue))
+        val green = ColorObj("Green", ContextCompat.getColor(context, R.color.apple_green))
+        val yellow = ColorObj("Yellow", ContextCompat.getColor(context, R.color.sun_yellow))
+        val orange = ColorObj("Orange", ContextCompat.getColor(context, R.color.squash))
         //Todo: Add additional colors
 
         colors.add(red)
